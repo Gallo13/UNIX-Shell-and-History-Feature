@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+
+#define MAX-LINE 80 /* The maximum length command */
+
+int main()
+{
+	char *args[MAX-LINE/2 + 1]; /* Command line arguments */
+	int should-run = 1; /* flag to determine when to exit program */
+
+		while (should-run)
+		{
+			printf("osh>");
+			fflush(stdout);
+
+			/**
+			* After reading using input, the steps are:
+			* (1) fork a child process using fork()
+			* (2) the child process will invoke execvp()
+			* (3) if command included &, parent will invoke wait()
+			*/
+		}
+
+		/*
+		args[0] = "ps"
+		args[1] = "-ael"
+		args[2] = NULL
+
+		Pass these to the execvp() function: execvp(char *command, char *params[]);
+		*/
+
+		return 0;
+}
